@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-image: url(https://www.transparenttextures.com/patterns/food.png);
+    background-size: 500px; 
+    height: 100%;
+    width: 100%;
+  }
+  
+  .container-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 800px;
+    color: #3df60f;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #66eb28;
+    color: white;
+    padding: 10px 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 45px;
+    font-weight: 0;
+    border-radius: 45px;
+    border-width: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #53cf00;
+  }
+  
+  button:focus {
+    outline: none; 
+  }
+  
+.im{
+  size: 400px 400px;
+}

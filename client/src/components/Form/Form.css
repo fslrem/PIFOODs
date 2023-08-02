@@ -1,0 +1,39 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(165, 242, 70);
+    color: white;
+    border-radius: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.name {
+    font-size: 24px;
+}   
+
+.input {
+    background-color:rgb(204, 245, 170);
+    border-radius: 10px;
+    font-size: 20px;
+    color:brown;
+}
+
+.newrecipe {
+  padding: 4px 10px; 
+    border: none;
+    border-radius: 5px;
+    color: #ffffff; 
+    cursor: pointer;
+    background-color:rgb(138, 209, 44);
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.newrecipe:hover {
+    background-color: rgb(154, 255, 46);
+}
+

@@ -1,0 +1,66 @@
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 20px;
+    align-items: center;
+    justify-items: center;
+    background-color: rgb(89, 186, 33);
+    background-image: url(https://www.transparenttextures.com/patterns/food.png);
+}
+
+.buttons {
+    background-color: rgb(250, 214, 54);
+}
+
+.bpage {
+    background-color: #92fb47;
+    border-color: #7fe835;
+    color: black;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: medium;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.bpage:hover {
+    background-color: #4a9d0f;
+}
+
+.option {
+    background-color: #4a9d0f;
+    border-radius: 10px;
+    font-weight: 1000;
+    font-size: medium;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.select {
+    background-color: #78da33;
+    border-radius: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 1000;
+    font-size: medium;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.select:hover {
+    background-color: rgb(188, 236, 91);
+}

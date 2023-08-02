@@ -1,0 +1,64 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #60b424;
+    padding: 10px;
+    background-image: url(https://www.transparenttextures.com/patterns/food.png);
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    size: 10px;
+  }
+
+  .formbutton{
+    padding: 4px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a9d0f; 
+    color: #ffffff; 
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  /* .form{
+    
+  } */
+  
+  .rec {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-right: 10px;
+  }
+  
+  .box {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #92e854e0; 
+    color: #4a9d0f; 
+  }
+  
+  .box::placeholder {
+    color: #4a9d0f; 
+  }
+  
+  .button {
+    padding: 6px 12px;
+    border: 5px;
+    border-color: #ffffff;
+    border-radius: 25px;
+    background-color: #4a9d0f; 
+    color: #ffffff; 
+    cursor: pointer;
+    font-size: 25px;
+  }
+  
+  .button:hover {
+    background-color: #03c075;
+  }
+  
+  
