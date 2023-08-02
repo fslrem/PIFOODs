@@ -1,5 +1,4 @@
 const { Recipes, Diets } = require('../db');
-// const { Op } = require('sequelize');
 const { v4: uuidv4 } = require('uuid');
 
 const postRecipe = async(req, res) => {

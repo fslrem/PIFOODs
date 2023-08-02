@@ -1,7 +1,5 @@
 import './Form.css';
-import { useEffect } from "react";
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import * as actions from '../../redux/actions';
@@ -46,7 +44,7 @@ export default function Form({ diets }) {
         }
 
         if (name === 'image') {
-            newErrors.image = value.length > 200 || value.length === 0;
+            newErrors.image = value.length > 400 || value.length === 0;
         }
 
         if (name === 'summary') {
@@ -58,7 +56,7 @@ export default function Form({ diets }) {
         }
 
         if (name === 'healthScore') {
-            newErrors.healthScore = value.length > 4 || value.length === 0;
+            newErrors.healthScore = value < 0 || value > 100;
         }
 
         if (name === 'name') {
@@ -83,46 +81,58 @@ export default function Form({ diets }) {
     console.log(formData)
 
     return (
-    <form onSubmit={submitHandler}>
-        <h1>NEW RECIPE</h1>  
-          <div className="form">
-
-                <label className="name">Name: </label>
+        <form onSubmit={submitHandler}>
+        <h1>your recipe HERE!</h1>
+            <div className="form">
+                
+                <label className="name"> Name: </label>
                 <input className="input" type="text" name="title" onChange={handleInputChange} />
                 {errors.title && <p style={{ color: 'red' }}>Nombre Inválido</p>}
+
+                <br />
 
                 <label className="name">Image:</label>
                 <input className="input" type="text" name="image" onChange={handleInputChange} />
                 {errors.image && <p style={{ color: 'red' }}>La imagen no es válida</p>}
 
+                <br />
+
                 <label className="name">Summary: </label>
                 <textarea className="input" name="summary" onChange={handleInputChange} />
-                {errors.summary && <p style={{ color: 'red' }}>Escriba un resumen de su receta</p>}
+                {errors.summary && <p style={{ color: 'red' }}>Falta el resumen de su receta</p>}
 
-                <label className="name">Steps: </label>
+                <br />
+
+                <label className="name"> Steps: </label>
                 <textarea className="input" name="steps" onChange={handleInputChange} />
-                {errors.steps && <p style={{ color: 'red' }}>Escriba los pasos de su receta</p>}
+                {errors.steps && <p style={{ color: 'red' }}>Faltan los pasos de su receta</p>}
+                <br />
 
-                <label className="name">Health Score: </label>
+                <label className="name"> Health Score: </label>
                 <input className="input" type="number" name="healthScore" onChange={handleInputChange} />
-                {errors.healthScore && <p style={{ color: 'red' }}>Puntue del 1 al 100</p>}
+                {errors.healthScore && <p style={{ color: 'red' }}>Puntúe del 1 al 100</p>}
 
-                <label className="name">Diets: </label>
+                <br />
+
+                <label className="name"> Diets: </label>
                 <select name="name" className="select" onChange={handleInputChange}>
                     <option className="option" value="All">Diets</option>
                     {diets.map(({ id, name }) => (
                         <option className="option" value={name} key={id}>{name}</option>
                     ))}
                 </select>
-                {errors.name && <p style={{ color: 'red' }}>Seleccione por lo menos una dieta</p>}
+  
+                {errors.name && <p style={{ color: 'red' }}>Seleccione una dieta</p>}
+
+                <br />
 
                 <button className="newrecipe" type="submit" disabled={!validForm}>Create New Recipe</button>
-                {!validForm && <p style={{ color: 'red' }} > Revisar los campos! </p>}
-                <br />
+                {!validForm && <p style={{ color: 'red' }}> Revise los campos! </p>}
+
                 <Link to={'/home'}>
                     <button className="newrecipe">Home</button>
                 </Link>
             </div>
         </form>
-    )
-};
+    );
+}

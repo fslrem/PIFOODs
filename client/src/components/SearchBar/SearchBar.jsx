@@ -1,6 +1,7 @@
+import './SearchBar.css';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
-import './SearchBar.css';
+
 
 export default function SearchBar({getAll}) {
 
@@ -21,7 +22,7 @@ export default function SearchBar({getAll}) {
 
       <div className="search">
       <Link to={'/'}>
-      <label className="vid">PI Food</label>
+      <label className="bhome">Foods</label>
       </Link>
       <input className="box" type='search' onChange={handleChange}/>
       <button className="button" onClick={handleSearch}>Search</button>

@@ -48,9 +48,7 @@ function Cards({ diets, getDiets, getAll, filteredByDiets, filteredBySource,
         orderedByScore(event.target.value);
     };
 
-
     return(<>
-    
     
     <div className='buttons'>
       <SearchBar getAll={getAll}/>
@@ -117,10 +115,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state) => {
-    return {
-        allTheRecipes: state.allTheRecipes,
-    }
-}
+    return { allTheRecipes: state.allTheRecipes }
+};
 
 
 export default connect( mapStateToProps, mapDispatchToProps )(Cards);

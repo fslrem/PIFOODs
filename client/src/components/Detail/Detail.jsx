@@ -30,7 +30,7 @@ export default function Detail() {
         pasos = recipe.steps.map((paso) => {
             return (
               <div className='info' key={paso.number}>
-                {`⚫ STEP ${paso.number}:   ${paso.step} `} <br />
+                {`⚫ STEP ${paso.number}: ${paso.step} `} <br />
               </div>
             );
           });

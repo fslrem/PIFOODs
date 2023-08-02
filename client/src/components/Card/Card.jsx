@@ -1,10 +1,11 @@
+import './Card.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Card.css';
+
 
 export default function Card({ id, name, diets, image }) {
-
-    let dieta  
+    let dieta
+     
     if(Array.isArray(diets)){dieta = diets.map((diet) => {return `${diet} -` })
     } else{ dieta = diets}
 
