@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 export default function Card({ id, name, diets, image }) {
     let dieta
      
-    if(Array.isArray(diets)){dieta = diets.map((diet) => {return `${diet} -` })
-    } else{ dieta = diets}
+    if(Array.isArray(diets)){dieta = diets.map((diet) => {return `${diet}, `})
+    } else { dieta = diets }
 
     return (
         <div className='card'>
@@ -23,7 +23,6 @@ export default function Card({ id, name, diets, image }) {
             </div>
 
             <div className='diets'>
-                
             <h2>Diets: {dieta}</h2>
             </div>
 

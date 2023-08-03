@@ -39,29 +39,17 @@ export default function Form({ diets }) {
 
         const newErrors = { ...errors };
 
-        if (name === 'title') {
-            newErrors.title = value.length > 50 || value.length === 0;
-        }
+        if (name === 'title') { newErrors.title = value.length > 50 || value.length === 0 }
 
-        if (name === 'image') {
-            newErrors.image = value.length > 400 || value.length === 0;
-        }
+        if (name === 'image') { newErrors.image = value.length > 400 || value.length === 0 }
 
-        if (name === 'summary') {
-            newErrors.summary = value.length > 200 || value.length === 0;
-        }
+        if (name === 'summary') { newErrors.summary = value.length > 200 || value.length === 0 }
 
-        if (name === 'steps') {
-            newErrors.steps = value.length > 1500 || value.length === 0;
-        }
+        if (name === 'steps') { newErrors.steps = value.length > 1500 || value.length === 0 }
 
-        if (name === 'healthScore') {
-            newErrors.healthScore = value < 0 || value > 100;
-        }
+        if (name === 'healthScore') { newErrors.healthScore = value < 0 || value > 100 }
 
-        if (name === 'name') {
-            newErrors.name = value === 'All';
-        }
+        if (name === 'name') { newErrors.name = value === 'All' }
 
         setErrors(newErrors);
     };
@@ -73,8 +61,10 @@ export default function Form({ diets }) {
 
         if (validForm) {
             dispatch(actions.createRecipe(formData));
+            alert("Your recipe has been created!")
         } else {
             console.log('Hay errores en los campos');
+            alert("There are errors in the fields")
         }
     };
 
@@ -87,30 +77,30 @@ export default function Form({ diets }) {
                 
                 <label className="name"> Name: </label>
                 <input className="input" type="text" name="title" onChange={handleInputChange} />
-                {errors.title && <p style={{ color: 'red' }}>Nombre Inválido</p>}
+                {errors.title && <p style={{ color: 'red' }}>Invalid Name</p>}
 
                 <br />
 
                 <label className="name">Image:</label>
                 <input className="input" type="text" name="image" onChange={handleInputChange} />
-                {errors.image && <p style={{ color: 'red' }}>La imagen no es válida</p>}
+                {errors.image && <p style={{ color: 'red' }}>The image is not valid</p>}
 
                 <br />
 
                 <label className="name">Summary: </label>
                 <textarea className="input" name="summary" onChange={handleInputChange} />
-                {errors.summary && <p style={{ color: 'red' }}>Falta el resumen de su receta</p>}
+                {errors.summary && <p style={{ color: 'red' }}>Please, describe your recipe</p>}
 
                 <br />
 
                 <label className="name"> Steps: </label>
                 <textarea className="input" name="steps" onChange={handleInputChange} />
-                {errors.steps && <p style={{ color: 'red' }}>Faltan los pasos de su receta</p>}
+                {errors.steps && <p style={{ color: 'red' }}>Write the steps of your recipe</p>}
                 <br />
 
                 <label className="name"> Health Score: </label>
                 <input className="input" type="number" name="healthScore" onChange={handleInputChange} />
-                {errors.healthScore && <p style={{ color: 'red' }}>Puntúe del 1 al 100</p>}
+                {errors.healthScore && <p style={{ color: 'red' }}>Rate your recipe from 1 to 100</p>}
 
                 <br />
 
@@ -121,18 +111,17 @@ export default function Form({ diets }) {
                         <option className="option" value={name} key={id}>{name}</option>
                     ))}
                 </select>
-  
-                {errors.name && <p style={{ color: 'red' }}>Seleccione una dieta</p>}
+                {errors.name && <p style={{ color: 'red' }}>Select at least one diet</p>}
 
                 <br />
 
-                <button className="newrecipe" type="submit" disabled={!validForm}>Create New Recipe</button>
-                {!validForm && <p style={{ color: 'red' }}> Revise los campos! </p>}
+                <button className="newrecipe" type="submit" disabled={!validForm}>Create Recipe</button>
+                {!validForm && <p style={{ color: 'red' }}> Review the fields! </p>}
 
                 <Link to={'/home'}>
                     <button className="newrecipe">Home</button>
                 </Link>
             </div>
         </form>
-    );
-}
+    )
+};

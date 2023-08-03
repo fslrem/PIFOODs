@@ -15,18 +15,16 @@ const postRecipe = async(req, res) => {
         image,
         summary,
         healthScore,
-        steps,
+        steps
       });
   
-      
-        const foundDiets = await Diets.findAll({ where: { name: name } });
-        await recipe.setDiets(foundDiets);
-      
+      const foundDiets = await Diets.findAll({ where: { name: name } });
+      await recipe.setDiets(foundDiets);
   
       res.status(201).json(recipe)
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
   };
-  
+
 module.exports = postRecipe;

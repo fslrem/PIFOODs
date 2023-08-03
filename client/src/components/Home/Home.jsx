@@ -13,6 +13,6 @@ export default function Home({recipes, onSearch, diets, getDiets}) {
     <br/>
     <br/>
     <br/>
-    <footer><p>R.M. - All rigths reserved</p></footer>
+    <footer><p>R.M. - All rigths reserved®</p></footer>
     </>)
 }

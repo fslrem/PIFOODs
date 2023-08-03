@@ -40,11 +40,13 @@ const getRecipesByName = async (req, res) => {
 
       //`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`
 
-      const response = await axios.get( `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`);
+      const response = await axios.get(`https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`);
       const recipes = response.data.results;
+      
       allrecetas = allrecetas.concat(recipes);
     
       let apiRecetas
+
       if (name != undefined) {
         apiRecetas = allrecetas.filter((receta) => {
             return receta.title && receta.title.toLowerCase().includes(name.toLowerCase());

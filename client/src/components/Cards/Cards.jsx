@@ -5,14 +5,13 @@ import Card from '../Card/Card';
 import SearchBar from '../SearchBar/SearchBar';
 import * as actions from '../../redux/actions';
 
-
 function Cards({ diets, getDiets, getAll, filteredByDiets, filteredBySource,
                 orderedByName, orderedByScore, allTheRecipes }) {
-    
-        useEffect(()=>{
-            getAll('');
-            getDiets();
-        }, []);
+
+        useEffect(() => {
+             getAll('');
+             getDiets();
+          }, []);
 
     const [currentPage, setCurrentPage] = useState(1);
     const recipesPerPage = 9;
@@ -23,30 +22,17 @@ function Cards({ diets, getDiets, getAll, filteredByDiets, filteredBySource,
 
     const totalPages = Math.ceil(100 / recipesPerPage);
 
-    const nextPage = () => {
-        setCurrentPage(currentPage + 1);
-    };
+    const nextPage = () => { setCurrentPage(currentPage + 1) };
 
-    const prevPage = () => {
-        setCurrentPage(currentPage - 1);
-    };
+    const prevPage = () => { setCurrentPage(currentPage - 1) };
 
-
-    const handleFilterByDiets = (event) => {
-        filteredByDiets(event.target.value);
-    };
+    const handleFilterByDiets = (event) => { filteredByDiets(event.target.value) };
     
-    const handleFilterBySource = (event) => {
-        filteredBySource(event.target.value);
-    };
+    const handleFilterBySource = (event) => { filteredBySource(event.target.value) };
 
-    const handleOrderByName = (event) => {
-        orderedByName(event.target.value);
-    };
+    const handleOrderByName = (event) => { orderedByName(event.target.value) };
 
-    const handleOrderByScore = (event) => {
-        orderedByScore(event.target.value);
-    };
+    const handleOrderByScore = (event) => { orderedByScore(event.target.value) };
 
     return(<>
     
@@ -95,7 +81,6 @@ function Cards({ diets, getDiets, getAll, filteredByDiets, filteredBySource,
             />
             );
          })}
-         
          </div>
          <button className="bpage" onClick={prevPage} disabled={currentPage === 1}>« Prev.</button>
          <span className="bpage">{currentPage} of {totalPages}</span>
@@ -117,6 +102,5 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     return { allTheRecipes: state.allTheRecipes }
 };
-
 
 export default connect( mapStateToProps, mapDispatchToProps )(Cards);

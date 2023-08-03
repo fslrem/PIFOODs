@@ -12,13 +12,12 @@ export default function Detail() {
     const [componentLoaded, setComponentLoaded] = useState(false);
 
     useEffect(() => {
-
         axios(`http://localhost:3001/recipes/${id}`)
         .then((response) => setRecipe(response.data));
         setTimeout(()=>{
             setComponentLoaded(true);
         }, 2000);
-    }, []);
+    }, [id]);
 
     let dieta
     if(Array.isArray(recipe.diets)){ 
@@ -30,7 +29,7 @@ export default function Detail() {
         pasos = recipe.steps.map((paso) => {
             return (
               <div className='info' key={paso.number}>
-                {`⚫ STEP ${paso.number}: ${paso.step} `} <br />
+                {`⚫ Step ${paso.number}: ${paso.step} `} <br />
               </div>
             );
           });
@@ -50,7 +49,6 @@ export default function Detail() {
                 <h2 className='info'>Summary: {recipe.summary}</h2>
                 <h2 className='info'>Health Score: {recipe.healthScore}</h2>
                 <h2 className='info'>Diets: {dieta}</h2>
-                
                 <h2 className='info'>Steps</h2>
                 {pasos}
                 </>
